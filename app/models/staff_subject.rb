@@ -10,4 +10,5 @@
 #
 
 class StaffSubject < ActiveRecord::Base
+  belongsTo :staff, :subject
 end

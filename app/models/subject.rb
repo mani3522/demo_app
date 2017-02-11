@@ -10,4 +10,5 @@
 #
 
 class Subject < ActiveRecord::Base
+  belongsTo :department
 end
