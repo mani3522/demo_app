@@ -2,14 +2,14 @@
 
 Ruby -  2.1.5
 
-Mysql
+Mysql any version in 5.5
 
 Rails 4.2.0
 
 bundle install
 
-bundle install
+rake db:create
 
-rake db:bootstrap
+rake db:migrate
 
-bundle exec rake db:migrate
+rails s
