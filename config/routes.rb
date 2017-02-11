@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :staff_subjects
+
+  resources :subjects
+
+  resources :departments
+
+  resources :staffs
+
+  resources :students
+
   root                'static_pages#home'
   get    'help'    => 'static_pages#help'
   get    'about'   => 'static_pages#about'

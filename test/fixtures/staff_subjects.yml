@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: staff_subjects
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  staff_id   :integer
+#  subject_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  staff_id: 1
+  subject_id: 1
+
+two:
+  staff_id: 1
+  subject_id: 1
