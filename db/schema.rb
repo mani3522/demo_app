@@ -11,13 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211114311) do
+ActiveRecord::Schema.define(version: 20170216160944) do
+
+  create_table "answer", force: :cascade do |t|
+    t.integer "question_id", limit: 4
+    t.integer "staff_id",    limit: 4
+    t.string  "content",     limit: 255
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "section",    limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "material", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.integer  "department_id", limit: 4
+    t.integer  "staff_id",      limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.binary   "content",       limit: 65535
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.string  "event_type", limit: 255
+    t.integer "event_id",   limit: 4
+    t.integer "student_id", limit: 4
+  end
+
+  create_table "question", force: :cascade do |t|
+    t.string  "question_type", limit: 255
+    t.integer "department_id", limit: 4
+    t.integer "staff_id",      limit: 4
+    t.string  "content",       limit: 255
+    t.string  "content_type",  limit: 255
   end
 
   create_table "staff_subjects", force: :cascade do |t|
@@ -51,11 +80,30 @@ ActiveRecord::Schema.define(version: 20170211114311) do
     t.integer  "user_id",       limit: 4
   end
 
+  create_table "study_material", force: :cascade do |t|
+    t.boolean "group",            limit: 1
+    t.string  "create_tabled_by", limit: 255
+  end
+
   create_table "subjects", force: :cascade do |t|
     t.string   "name",          limit: 255
     t.integer  "department_id", limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "test", force: :cascade do |t|
+    t.string  "creator_type",  limit: 255
+    t.integer "creator_id",    limit: 4
+    t.integer "test_duration", limit: 4
+    t.string  "type",          limit: 255
+  end
+
+  create_table "test_answer", force: :cascade do |t|
+    t.integer "test_id",     limit: 4
+    t.integer "student_id",  limit: 4
+    t.integer "question_id", limit: 4
+    t.string  "answer",      limit: 255
   end
 
   create_table "users", force: :cascade do |t|
