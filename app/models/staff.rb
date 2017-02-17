@@ -15,5 +15,5 @@
 #
 
 class Staff < ActiveRecord::Base
-  belongsTo :user
+  belongs_to :user
 end

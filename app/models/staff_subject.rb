@@ -10,5 +10,6 @@
 #
 
 class StaffSubject < ActiveRecord::Base
-  belongsTo :staff, :subject
+  belongs_to :staff
+  belongs_to :subject
 end

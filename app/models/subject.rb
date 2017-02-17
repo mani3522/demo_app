@@ -10,5 +10,5 @@
 #
 
 class Subject < ActiveRecord::Base
-  belongsTo :department
+  belongs_to :department
 end

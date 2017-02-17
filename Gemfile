@@ -22,6 +22,7 @@ gem 'turbolinks',              '~> 2.3.0'
 gem 'jbuilder',                '~> 2.2.3'
 gem 'arel',                    '~> 6.0.0'
 gem 'sdoc',                    '~> 0.4.0', group: :doc
+gem 'seed-fu',                 '~> 2.3'
 
 # gem 'pg'
 gem 'rack-cors', :require => 'rack/cors'
