@@ -33,6 +33,29 @@ student_user = User.seed do |s|
   s.reset_digest         = ''
 end
 
+student_user1 = User.seed do |s|
+  s.activated            = true
+  s.activated_at         = DateTime.now
+  s.admin                = false
+  s.email                = 'student2@demo_app.com'
+  s.name                 = 'Student'
+  s.password_digest      = '$2a$04$2hmJd.uiWgKzlRDAv.693e9G9oIFykpbElOt6RSWhHx1soKHk0DiK'
+  s.remember_digest      = ''
+  s.reset_digest         = ''
+end
+
+student_user2 = User.seed do |s|
+  s.activated            = true
+  s.activated_at         = DateTime.now
+  s.admin                = false
+  s.email                = 'student3@demo_app.com'
+  s.name                 = 'Student'
+  s.password_digest      = '$2a$04$2hmJd.uiWgKzlRDAv.693e9G9oIFykpbElOt6RSWhHx1soKHk0DiK'
+  s.remember_digest      = ''
+  s.reset_digest         = ''
+end
+
+
 Department.seed do |s|
   s.name = "IX"
   s.section = "B"
@@ -66,6 +89,19 @@ end
 Student.seed do |s|
   s.first_name = "Ram"
   s.user_id = student_user.first().id
+  s.department_id = dept1.first().id
+end
+
+Student.seed do |s|
+  s.first_name = "Mano"
+  s.user_id = student_user1.first().id
+  s.department_id = dept1.first().id
+end
+
+
+Student.seed do |s|
+  s.first_name = "Rahim"
+  s.user_id = student_user2.first().id
   s.department_id = dept1.first().id
 end
 
