@@ -6,12 +6,16 @@ class RemainingSchema < ActiveRecord::Migration
         t.integer :staff_id
         t.string  :content
         t.string  :content_type
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
       create_table :answer do |t|
         t.integer :question_id
         t.integer :staff_id
         t.string  :content
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
       create_table :material do |t|
@@ -20,6 +24,8 @@ class RemainingSchema < ActiveRecord::Migration
         t.integer    :staff_id
         t.timestamps :deleted_at
         t.binary     :content
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
       create_table :test do |t|
@@ -27,6 +33,8 @@ class RemainingSchema < ActiveRecord::Migration
         t.integer :creator_id
         t.integer :test_duration
         t.string  :type
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
       create_table :test_answer do |t|
@@ -34,17 +42,30 @@ class RemainingSchema < ActiveRecord::Migration
         t.integer :student_id
         t.integer :question_id
         t.string  :answer
+        t.timestamps :created_at
+        t.timestamps :updated_at
+      end
+
+      create_table :study do |t|
+        t.boolean :group
+        t.string  :create_by
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
       create_table :study_material do |t|
-        t.boolean :group
-        t.string  :create_tabled_by
+        t.integer :study_id
+        t.integer :material_id
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
 
-      create_table :participants do |t|
+      create_table :participant do |t|
         t.string  :event_type
         t.integer :event_id
         t.integer :student_id
+        t.timestamps :created_at
+        t.timestamps :updated_at
       end
   end
 end

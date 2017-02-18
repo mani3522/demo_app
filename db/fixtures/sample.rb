@@ -1,37 +1,34 @@
 # TODO complete the entire seeds as we have completed only the required as of now
 
 User.seed do |s|
-  #TODO add password_digest for student
   s.activated            = true
   s.activated_at         = DateTime.now
   s.admin                = true
   s.email                = 'admin1@demo_app.com'
   s.name                 = 'Admin'
-  s.password_digest      = ''
+  s.password_digest      = '$2a$04$2hmJd.uiWgKzlRDAv.693e9G9oIFykpbElOt6RSWhHx1soKHk0DiK'
   s.remember_digest      = ''
   s.reset_digest         = ''
 end
 
 staff_user = User.seed do |s|
-  #TODO add password_digest for staff
   s.activated            = true
   s.activated_at         = DateTime.now
   s.admin                = false
   s.email                = 'staff1@demo_app.com'
   s.name                 = 'Staff'
-  s.password_digest      = ''
+  s.password_digest      = '$2a$04$2hmJd.uiWgKzlRDAv.693e9G9oIFykpbElOt6RSWhHx1soKHk0DiK'
   s.remember_digest      = ''
   s.reset_digest         = ''
 end
 
 student_user = User.seed do |s|
-  #TODO add password_digest for student
   s.activated            = true
   s.activated_at         = DateTime.now
   s.admin                = false
   s.email                = 'student1@demo_app.com'
   s.name                 = 'Student'
-  s.password_digest      = ''
+  s.password_digest      = '$2a$04$2hmJd.uiWgKzlRDAv.693e9G9oIFykpbElOt6RSWhHx1soKHk0DiK'
   s.remember_digest      = ''
   s.reset_digest         = ''
 end
